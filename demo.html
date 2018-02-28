@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<body>
+<body ng-app="myapp" ng-controller="ListController">     
+    <div class="container">
+    <h2>table</h2>
+        <div class="row">
+       
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                       <input type="text" class="col-md-12 form-control" ng-model="searchuser"/>
+                       <ul ng-show="searchuser" class="list-group col-md-4">
+                         <li  class="list-group-item" ng-repeat="users in student.subjects | filter : searchuser as results track by $index"><a>{{users.name | uppercase }}<span class="pull-right badge badge-primary badge-pill"> {{users.marks | uppercase }} </span>
+                          </a></li>
+                           <li  class="list-group-item text-center" ng-if="results.length==0">No data found</li>
+                        </li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+    
+     </div>
+     
+     <!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+<!-- Modal -->
+
+      <script src="assets/js/anguler.js"></script>
+      <script type="text/javascript" src="assets/js/main.js"></script>
+      
+      
+</body>
+</html>
+ 

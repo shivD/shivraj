@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<body>
+
+    <body ng-app="myapp" ng-controller="ListController">
+        <div class="container">
+            <h2>table</h2>
+              <div class="row"  ng-init="lists=['shivraj','saket','piyush','revasankar','trilok']">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="userss in lists">
+                      <td>{{$index+1}}</td>
+                      <td><span >{{userss}}</span></td>
+                      <td><w3-test-directive></w3-test-directive></td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+        <script src="assets/js/anguler.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
+
+</html>
