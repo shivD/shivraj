@@ -1,0 +1,113 @@
+*{ -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+     box-sizing:border-box;
+}
+    .table{
+        .action{
+             width:160px; 
+        }
+    }
+    .sorting{
+     background: orange; 
+
+    &:after{
+        right: 10px;
+        position: absolute;
+        content: "";
+        display: block;
+         background: orange;     
+        opacity:1;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        writing-mode: lr-tb;
+        -webkit-transition: all 1s;
+    }
+}
+.shorting-head{
+         position: relative;
+         &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            right: 7px;
+            width: 13px;
+            height: 17px;
+            z-index: 99;
+            top: 10px;
+            background: url(../img/arrow-down.png);
+            opacity: 0.5;
+        }   
+    }
+
+.ratation{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: ratation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
+    animation-name: ratation;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+
+}
+
+@-webkit-keyframes ratation {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+
+@keyframes ratation {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+.count-box{
+    background:black;
+   @include  make-md-column(12);
+   height:300px;
+}
+
+.trasform-vertical{left:50%; top: 50%; transform: translate(-50%, -50%); position: absolute; width: 100%;}
+.fixed-box{position:fixed; width:100%; height:100%; top:0px; left: 0px; background: orange; padding: 20px;}
+
+
+.counter-section{
+    counter-reset: section;
+}
+
+h1{
+    counter-reset: subsection;
+}
+
+h1:before{
+     counter-increment: section;
+    content:"section " counter(section)". " ;
+}
+h2:before{
+     counter-increment: subsection;
+    content:"section " counter(section)"." counter(subsection) " ";
+}
+.coint{ max-width: 400px; padding: 10px;}
+.img-box{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    background: gray;
+    display: inline-block;
+    float:left;
+
+    img{
+            border-radius: 50%;
+    }
+        }
+.text-box{ width:100%; padding-left: 80px; margin-left: -70px; text-overflow:ellipsis; overflow: hidden; float:left; white-space: nowrap; line-height: 30px;}
+.error-msg{ color: red; font-size: 12px;}

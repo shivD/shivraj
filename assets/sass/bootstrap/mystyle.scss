@@ -1,0 +1,30 @@
+
+$i: 6;
+/* @for $i from 1 through  10 {
+  .item-#{$i} { width: 2em * $i; }
+}*/
+@while $i > 0{
+	.item-#{$i}{ width: 2em * $i; }
+	$i: $i - 2;
+}
+
+@mixin vendor($property, $value){
+	-webkit-#{$property}:#{$value};
+	-moz-#{$property}:#{$value};
+	-o-#{$property}:#{$value};
+	-ms-#{$property}:#{$value};
+	 #{$property}:#{$value};
+}
+
+@each $animal, $color in (puma, #2BBBAD), (sea-slug, #4285F4), (egret, #aa66cc), (salamander, #3F729B){
+	.#{$animal}-icon{
+		background: url('../img/#{$animal}.png')left center no-repeat;
+		box-sizing: content-box;
+		color:$color;
+		@include vendor(border-radius, 4px)
+	}
+}
+
+.box{@include vendor(border-radius, 2px)}
+
+.box1{@include vendor(border-radius, 3px)}
